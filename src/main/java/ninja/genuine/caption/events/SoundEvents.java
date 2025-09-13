@@ -1,5 +1,6 @@
 package ninja.genuine.caption.events;
 
+import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;
 import net.minecraft.client.audio.PositionedSoundRecord;
@@ -95,11 +96,21 @@ public class SoundEvents {
 		}
 	}
 
+    @SubscribeEvent
+    public void onClientTick(TickEvent.ClientTickEvent event) {
+        if (event.phase == TickEvent.Phase.END && Minecraft.getMinecraft().inGameHasFocus) {
+            if (ClosedCaption.toggleKey.isPressed()) {
+                ClosedCaption.enabled = !ClosedCaption.enabled;
+            }
+        }
+    }
+
 	public void registerEvents() {
 		MinecraftForge.EVENT_BUS.register(this);
 		MinecraftForge.EVENT_BUS.register(hud);
 		MinecraftForge.EVENT_BUS.register(world);
 		FMLCommonHandler.instance().bus().register(hud);
 		FMLCommonHandler.instance().bus().register(world);
+        FMLCommonHandler.instance().bus().register(this);
 	}
 }
