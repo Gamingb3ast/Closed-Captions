@@ -1,0 +1,16 @@
+closedcaption.config.title=隐藏式字幕
+
+closedcaption.config.general=常规设置
+closedcaption.config.graphic=画面设置
+closedcaption.config.enable=启用/禁用
+closedcaption.config.edit=添加/编辑/移除
+
+closedcaption.config.sub.general=常规
+closedcaption.config.sub.graphic=画面
+closedcaption.config.sub.enable=切换字幕显示
+closedcaption.config.sub.edit=编辑翻译文本
+
+closedcaption.config.sub.general.tooltip=隐藏字幕的常规设置选项。
+closedcaption.config.sub.graphic.tooltip=调整字幕显示界面的位置参数。
+closedcaption.config.sub.enable.tooltip=启用或禁用隐藏字幕功能。
+closedcaption.config.sub.edit.tooltip=添加、编辑或移除翻译文本内容。
